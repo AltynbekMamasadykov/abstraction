@@ -3,37 +3,27 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        Air birinchi = new Birinchi();
-        birinchi.run();
-        birinchi.start();
-        ((Birinchi) birinchi).tortunchumetod();
-        birinchi.finish();
 
-        Air ekinchi =new Ekinchi();
-        ekinchi.run();
-        ekinchi.start();
-        ((Ekinchi) ekinchi).ekinchimetod();
-        ekinchi.finish();
+        Car car1 = new Car("BMW","white",200,"2022");
 
-        Air[] uchkandar = {birinchi,ekinchi};
+        Ship ship1 = new Ship("Titanic","black",120,"1936");
+
+        Plane plane1 = new Plane("F16","grey",1650,"2015");
 
 
+        Vehicle[] vehicles = {car1,ship1,plane1};
 
-        Aqueous uchunchu = new Uchunchu();
-        Aqueous tortunchu = new Tortunchu();
-
-        Aqueous[] suzgondor = {uchunchu,tortunchu};
-
-
-        Terrestrial beshinchi = new Beshinci();
-        Terrestrial altinchi = new Altinchi();
-
-        Terrestrial[] jurgondor = {beshinchi,altinchi};
-
-
-        Vehicle[] baary = {uchkandar,suzgondor,jurgondor};
-
-
-
+        for (Vehicle vehicle:vehicles) {
+            if(vehicle instanceof Car){
+                ((Car) vehicle).drive();
+                ((Car) vehicle).getInfo();
+            }else if (vehicle instanceof Ship){
+                ((Ship) vehicle).sail();
+                ((Ship) vehicle).getInfo();
+            }else if (vehicle instanceof Plane){
+                ((Plane) vehicle).fly();
+                ((Plane) vehicle).getInfo();
+            }
+        }
     }
 }
